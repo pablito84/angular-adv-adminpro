@@ -12,6 +12,9 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
+/// Mantenimientos
+import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+
 
 
 const routes: Routes = [
@@ -21,13 +24,17 @@ const routes: Routes = [
     canActivate: [ AuthGuard ],
     children: [
         { path: '' , component: DashboardComponent , data: { titulo: 'Dashboard' } },
-        { path: 'progress' , component: ProgressComponent , data: { titulo: 'Progress' }  },
+        { path: 'progress' , component: ProgressComponent , data: { titulo: 'Progress' } },
         { path: 'grafica1' , component: Grafica1Component  , data: { titulo: 'Grafica1' } },
-        { path: 'account-settings' , component: AccountSettingComponent , data: { titulo: 'Ajuste de cuenta' }  },
-        { path: 'promesas' , component: PromesasComponent , data: { titulo: 'Promesas' }  },
-        { path: 'rxjs' , component: RxjsComponent , data: { titulo: 'Rxjs' }  },
-        { path: 'perfil' , component: PerfilComponent , data: { titulo: 'Perfil de Usuario' }  },
+        { path: 'account-settings' , component: AccountSettingComponent , data: { titulo: 'Ajuste de cuenta' } },
+        { path: 'promesas' , component: PromesasComponent , data: { titulo: 'Promesas' } },
+        { path: 'rxjs' , component: RxjsComponent , data: { titulo: 'Rxjs' } },
+        { path: 'perfil' , component: PerfilComponent , data: { titulo: 'Perfil de Usuario' } },
       /*   { path: '' , redirectTo: '/dashboard', pathMatch: 'full' }, */
+
+  /// Mantenimientos
+  { path: 'usuarios' , component: UsuariosComponent , data: { titulo: 'Usuario de aplicación' }  },
+
     ]
   },
 
