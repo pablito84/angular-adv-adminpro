@@ -38,14 +38,8 @@ ngOnDestroy(): void {
     this.cargarUsuarios();
 
     this.imgSubs = this.modalImagenService.nuevaImagen
-        .pipe(
-          delay(500)
-        )
-        .subscribe( img => {
-     /*      console.log(img); */
-          this.cargarUsuarios()
-          });
-
+        .pipe( delay(500) )
+        .subscribe( img => { this.cargarUsuarios() } );
   }
 
   cargarUsuarios() {
@@ -77,7 +71,7 @@ ngOnDestroy(): void {
     }
 
     this.busquedasService.buscar( 'usuarios', termino )
-        .subscribe( resultados => {
+        .subscribe( (resultados: Usuario[]) => {
             this.usuarios = resultados;
           });
 
